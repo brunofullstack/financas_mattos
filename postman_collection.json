@@ -1,0 +1,49 @@
+{
+    "info": {
+      "name": "Estrategia WMS API",
+      "_postman_id": "12345-abcdef-67890-ghijkl",
+      "description": "Coleção para testar a API de estratégia WMS.",
+      "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+      {
+        "name": "Criar Estrategia (POST /estrategiaWMS)",
+        "request": {
+          "method": "POST",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json",
+              "type": "text"
+            }
+          ],
+          "body": {
+            "mode": "raw",
+            "raw": "{\n  \"dsEstrategia\": \"RETIRA\",\n  \"nrPrioridade\": 10,\n  \"horarios\": [\n    {\n      \"dsHorarioInicio\": \"09:00\",\n      \"dsHorarioFinal\": \"10:00\",\n      \"nrPrioridade\": 40\n    },\n    {\n      \"dsHorarioInicio\": \"10:01\",\n      \"dsHorarioFinal\": \"11:00\",\n      \"nrPrioridade\": 30\n    },\n    {\n      \"dsHorarioInicio\": \"11:01\",\n      \"dsHorarioFinal\": \"12:00\",\n      \"nrPrioridade\": 20\n    }\n  ]\n}"
+          },
+          "url": {
+            "raw": "http://localhost:88/api/estrategiaWMS",
+            "protocol": "https",
+            "host": ["seu-endereco-api", "com"],
+            "path": ["estrategiaWMS"]
+          }
+        },
+        "response": []
+      },
+      {
+        "name": "Obter Prioridade (GET /estrategiaWMS/{cdEstrategia}/{dsHora}/{dsMinuto}/prioridade)",
+        "request": {
+          "method": "GET",
+          "header": [],
+          "url": {
+            "raw": "http://localhost:88/api/estrategiaWMS/123/09/30/prioridade",
+            "protocol": "https",
+            "host": ["seu-endereco-api", "com"],
+            "path": ["estrategiaWMS", "123", "09", "30", "prioridade"]
+          }
+        },
+        "response": []
+      }
+    ]
+  }
+  
